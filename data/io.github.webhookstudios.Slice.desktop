@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Slice
+GenericName=Partition Manager
+Comment=Create, resize, move, copy, format and check disk partitions
+Exec=slice %F
+Icon=io.github.webhookstudios.Slice
+Terminal=false
+StartupNotify=true
+StartupWMClass=io.github.webhookstudios.Slice
+Categories=System;Settings;GTK;GNOME;
+Keywords=disk;partition;format;resize;usb;drive;gpt;mbr;ext4;ntfs;clone;

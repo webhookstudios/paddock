@@ -1,0 +1,6 @@
+#!/usr/bin/python3 -I
+# Runs as root through pkexec. -I ignores the caller's environment and working folder.
+import sys
+sys.path.insert(0, '/usr/lib/slice')
+from slicepm.helper import main
+sys.exit(main())
