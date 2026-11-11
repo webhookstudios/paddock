@@ -11,8 +11,8 @@ from contextlib import redirect_stdout
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from slicepm import helper, ops, scan
-from slicepm.model import MiB, OpError
+from paddock import helper, ops, scan
+from paddock.model import MiB, OpError
 
 
 def run_ops(oplist, dry=False):
@@ -40,7 +40,7 @@ def region(path, start, size, tmp):
     return out
 
 
-class SliceTests(unittest.TestCase):
+class PaddockTests(unittest.TestCase):
     def setUp(self):
         self.dir = tempfile.TemporaryDirectory()
         self.img = blank(os.path.join(self.dir.name, 'a.img'), 512)

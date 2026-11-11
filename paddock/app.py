@@ -5,19 +5,19 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Adw, Gio
 
-from .ui.window import SliceWindow
+from .ui.window import PaddockWindow
 
-APP_ID = 'io.github.webhookstudios.Slice'
+APP_ID = 'io.github.webhookstudios.Paddock'
 
 
-class SliceApp(Adw.Application):
+class PaddockApp(Adw.Application):
     def __init__(self):
         super().__init__(application_id=APP_ID, flags=Gio.ApplicationFlags.HANDLES_OPEN)
         self.win = None
 
     def _window(self):
         if not self.win:
-            self.win = SliceWindow(self)
+            self.win = PaddockWindow(self)
         return self.win
 
     def do_startup(self):
@@ -38,4 +38,4 @@ class SliceApp(Adw.Application):
 
 
 def main():
-    return SliceApp().run(sys.argv)
+    return PaddockApp().run(sys.argv)

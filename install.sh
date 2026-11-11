@@ -1,12 +1,12 @@
 #!/bin/sh
-# Adds a menu entry that runs Slice straight from this folder, without root.
+# Adds a menu entry that runs Paddock straight from this folder, without root.
 # Changing disks still asks for your password. For the proper install, use the deb package.
 set -e
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 DATA="${XDG_DATA_HOME:-$HOME/.local/share}"
 mkdir -p "$DATA/applications" "$DATA/icons/hicolor/scalable/apps"
-cp "$ROOT/data/io.github.webhookstudios.Slice.svg" "$DATA/icons/hicolor/scalable/apps/"
-sed -e "s|^Exec=.*|Exec=env PYTHONPATH=$ROOT python3 -m slicepm %F|" \
-    "$ROOT/data/io.github.webhookstudios.Slice.desktop" > "$DATA/applications/io.github.webhookstudios.Slice.desktop"
+cp "$ROOT/data/io.github.webhookstudios.Paddock.svg" "$DATA/icons/hicolor/scalable/apps/"
+sed -e "s|^Exec=.*|Exec=env PYTHONPATH=$ROOT python3 -m paddock %F|" \
+    "$ROOT/data/io.github.webhookstudios.Paddock.desktop" > "$DATA/applications/io.github.webhookstudios.Paddock.desktop"
 update-desktop-database "$DATA/applications" 2>/dev/null || true
-echo "Paddock is in your apps menu. Or run: PYTHONPATH=$ROOT python3 -m slicepm"
+echo "Paddock is in your apps menu. Or run: PYTHONPATH=$ROOT python3 -m paddock"

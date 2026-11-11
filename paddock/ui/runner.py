@@ -5,7 +5,7 @@ import sys
 
 from gi.repository import Gio, GLib
 
-HELPER = '/usr/lib/slice/slice-helper'
+HELPER = '/usr/lib/paddock/paddock-helper'
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
@@ -14,7 +14,7 @@ def helper_argv(args, elevated):
         base = [HELPER] + args
         return (['pkexec'] + base) if elevated else base
     # running from a source checkout
-    base = ['env', f'PYTHONPATH={ROOT}', sys.executable, '-m', 'slicepm.helper'] + args
+    base = ['env', f'PYTHONPATH={ROOT}', sys.executable, '-m', 'paddock.helper'] + args
     return (['pkexec'] + base) if elevated else base
 
 

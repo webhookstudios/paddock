@@ -1,4 +1,4 @@
-"""The part of Slice that writes to disks.
+"""The part of Paddock that writes to disks.
 
 It runs as root (through pkexec) for real disks, or as the user for disk image files.
 It reads a JSON list of operations on stdin and prints one JSON event per line.
@@ -220,7 +220,7 @@ class Executor:
                 time.sleep(0.1)
             yield node
             return
-        fd, tmp = tempfile.mkstemp(prefix='slice-', suffix='.part')
+        fd, tmp = tempfile.mkstemp(prefix='paddock-', suffix='.part')
         os.close(fd)
         try:
             with open(tmp, 'wb') as f:
@@ -551,7 +551,7 @@ def smart(disk):
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     if not argv:
-        print('usage: slice-helper apply|surface DISK|smart DISK', file=sys.stderr)
+        print('usage: paddock-helper apply|surface DISK|smart DISK', file=sys.stderr)
         return 2
     cmd = argv[0]
     if cmd == 'apply':

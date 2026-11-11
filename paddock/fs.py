@@ -59,7 +59,7 @@ def clean_label(fs, label):
 
 
 def can_resize(fs):
-    """True when Slice can resize the filesystem itself, not just the partition."""
+    """True when Paddock can resize the filesystem itself, not just the partition."""
     if fs is None:
         return True
     info = FILESYSTEMS.get(fs)

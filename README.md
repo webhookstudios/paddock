@@ -20,7 +20,7 @@ Paddock has only been tested on Ubuntu 26.04 with GNOME 50.
 
 ### With the deb package (recommended)
 
-Download `paddock_1.1.0_all.deb` from the [latest release](https://github.com/webhookstudios/slice/releases/latest), then install it:
+Download `paddock_1.1.0_all.deb` from the [latest release](https://github.com/webhookstudios/paddock/releases/latest), then install it:
 
 ```bash
 sudo apt install ./paddock_1.1.0_all.deb
@@ -39,11 +39,11 @@ sudo apt remove paddock
 ### From source
 
 ```bash
-git clone https://github.com/webhookstudios/slice.git
+git clone https://github.com/webhookstudios/paddock.git
 ```
 
 ```bash
-cd slice && PYTHONPATH=. python3 -m slicepm
+cd paddock && PYTHONPATH=. python3 -m slicepm
 ```
 
 `./install.sh` adds a menu entry that runs Paddock from the cloned folder.
