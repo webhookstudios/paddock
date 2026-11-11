@@ -18,10 +18,10 @@ Slice has only been tested on Ubuntu 26.04 with GNOME 50.
 
 ### With the deb package (recommended)
 
-Download `slice_1.0.0_all.deb` from the [latest release](https://github.com/webhookstudios/slice/releases/latest), then install it:
+Download `slice_1.0.1_all.deb` from the [latest release](https://github.com/webhookstudios/slice/releases/latest), then install it:
 
 ```bash
-sudo apt install ./slice_1.0.0_all.deb
+sudo apt install ./slice_1.0.1_all.deb
 ```
 
 Open **Slice** from the apps menu. Reading disks needs no password. Applying changes asks for your administrator password.
