@@ -30,7 +30,7 @@ install -m 644 "$ROOT/data/$APP_ID.svg" "$STAGE/usr/share/icons/hicolor/scalable
 
 cat > "$STAGE/usr/share/doc/paddock/copyright" <<EOT
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Paddock (formerly Slice)
+Upstream-Name: Paddock
 Source: https://github.com/webhookstudios/paddock
 
 Files: *
@@ -63,7 +63,7 @@ Section: admin
 Priority: optional
 Homepage: https://github.com/webhookstudios/paddock
 Description: Partition manager with a visual disk map
- Paddock (formerly Slice) shows each disk as a coloured map and lets you create, delete,
+ Paddock shows each disk as a coloured map and lets you create, delete,
  format, resize, move, label, copy and check partitions, clone or wipe
  whole disks, convert between GPT and MBR, and read disk health. Changes
  are queued and shown to you first, and nothing is written until you

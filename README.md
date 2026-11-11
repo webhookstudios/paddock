@@ -1,6 +1,6 @@
 # Paddock
 
-*Formerly Slice. Part of the Sedge family of webhookstudios apps.*
+*Part of the Sedge family of webhookstudios apps.*
 
 A partition manager for Ubuntu. Paddock shows each disk as a colored map, and lets you create, delete, format, resize, move, label, copy and check partitions, clone or wipe whole disks, convert between GPT and MBR, and read disk health.
 
@@ -20,10 +20,10 @@ Paddock has only been tested on Ubuntu 26.04 with GNOME 50.
 
 ### With the deb package (recommended)
 
-Download `paddock_1.1.0_all.deb` from the [latest release](https://github.com/webhookstudios/paddock/releases/latest), then install it:
+Download `paddock_1.1.1_all.deb` from the [latest release](https://github.com/webhookstudios/paddock/releases/latest), then install it:
 
 ```bash
-sudo apt install ./paddock_1.1.0_all.deb
+sudo apt install ./paddock_1.1.1_all.deb
 ```
 
 The package is called `paddock`. Up to version 1.0.1 it was called `slice`, a name Ubuntu also uses for an unrelated text tool, so installing `paddock` replaces the old package and leaves Ubuntu's `slice` alone. From a terminal, run `paddock`.
