@@ -42,7 +42,7 @@ def swatch(fs):
 
 class SliceWindow(Adw.ApplicationWindow):
     def __init__(self, app):
-        super().__init__(application=app, title='Slice', default_width=1180, default_height=760)
+        super().__init__(application=app, title='Paddock', default_width=1180, default_height=760)
         self.state = State()
         self.sel_disk = None
         self.sel_item = None            # ('p'|'f', start)
@@ -71,7 +71,7 @@ class SliceWindow(Adw.ApplicationWindow):
         menu.append('Open disk image…', 'win.open_image')
         menu.append('New practice disk image…', 'win.new_image')
         sect = Gio.Menu()
-        sect.append('About Slice', 'win.about')
+        sect.append('About Paddock', 'win.about')
         menu.append_section(None, sect)
         header.pack_end(Gtk.MenuButton(icon_name='open-menu-symbolic', menu_model=menu, primary=True))
         view.add_top_bar(header)
@@ -485,7 +485,7 @@ class SliceWindow(Adw.ApplicationWindow):
     def a_new_image(self):
         size = dialogs._spin('Size', 'GiB. The file starts almost empty and only grows as you use it.', 8, 1, 256)
         dialogs.ask(self, 'New practice disk image',
-                    'A file that acts like a disk, so you can try Slice without touching a real one.',
+                    'A file that acts like a disk, so you can try Paddock without touching a real one.',
                     dialogs._group(size), 'Choose where to save…', on_ok=lambda: self._pick_new_image(int(size.get_value())))
 
     def _pick_new_image(self, gib):
@@ -510,12 +510,12 @@ class SliceWindow(Adw.ApplicationWindow):
         dlg.save(self, None, done)
 
     def a_about(self):
-        about = Adw.AboutDialog(application_name='Slice', application_icon='io.github.webhookstudios.Slice',
+        about = Adw.AboutDialog(application_name='Paddock', application_icon='io.github.webhookstudios.Slice',
                                 version=__version__, developer_name='webhookstudios',
                                 website='https://github.com/webhookstudios/slice',
                                 issue_url='https://github.com/webhookstudios/slice/issues',
                                 license_type=Gtk.License.GPL_2_0,
-                                comments='Create, resize, move, copy, format and check disk partitions.')
+                                comments='Create, resize, move, copy, format and check disk partitions.\n\nPart of the Sedge family of apps.')
         about.present(self)
 
     # ----------------------------------------------------------- apply changes

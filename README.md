@@ -1,8 +1,10 @@
-# Slice
+# Paddock
 
-A partition manager for Ubuntu. Slice shows each disk as a colored map, and lets you create, delete, format, resize, move, label, copy and check partitions, clone or wipe whole disks, convert between GPT and MBR, and read disk health.
+*Formerly Slice. Part of the Sedge family of webhookstudios apps.*
 
-![The Slice window: a disk map, action buttons and a partition table](docs/screenshots/main.png)
+A partition manager for Ubuntu. Paddock shows each disk as a colored map, and lets you create, delete, format, resize, move, label, copy and check partitions, clone or wipe whole disks, convert between GPT and MBR, and read disk health.
+
+![The Paddock window: a disk map, action buttons and a partition table](docs/screenshots/main.png)
 
 Changes are queued first. The map shows what the disk will look like, you review the list, and nothing is written until you press **Apply**.
 
@@ -12,24 +14,26 @@ Changes are queued first. The map shows what the disk will look like, you review
 
 - Ubuntu 24.04 or newer, with GNOME (it uses GTK 4 and libadwaita 1.5 or newer)
 
-Slice has only been tested on Ubuntu 26.04 with GNOME 50.
+Paddock has only been tested on Ubuntu 26.04 with GNOME 50.
 
 ## Install
 
 ### With the deb package (recommended)
 
-Download `slice_1.0.1_all.deb` from the [latest release](https://github.com/webhookstudios/slice/releases/latest), then install it:
+Download `paddock_1.1.0_all.deb` from the [latest release](https://github.com/webhookstudios/slice/releases/latest), then install it:
 
 ```bash
-sudo apt install ./slice_1.0.1_all.deb
+sudo apt install ./paddock_1.1.0_all.deb
 ```
 
-Open **Slice** from the apps menu. Reading disks needs no password. Applying changes asks for your administrator password.
+The package is called `paddock`. Up to version 1.0.1 it was called `slice`, a name Ubuntu also uses for an unrelated text tool, so installing `paddock` replaces the old package and leaves Ubuntu's `slice` alone. From a terminal, run `paddock`.
+
+Open **Paddock** from the apps menu. Reading disks needs no password. Applying changes asks for your administrator password.
 
 To remove it:
 
 ```bash
-sudo apt remove slice
+sudo apt remove paddock
 ```
 
 ### From source
@@ -42,7 +46,7 @@ git clone https://github.com/webhookstudios/slice.git
 cd slice && PYTHONPATH=. python3 -m slicepm
 ```
 
-`./install.sh` adds a menu entry that runs Slice from the cloned folder.
+`./install.sh` adds a menu entry that runs Paddock from the cloned folder.
 
 ## Try it without risk
 
@@ -82,7 +86,7 @@ Choose **New practice disk image** from the menu. It makes a file that behaves l
 - **Tested on disk image files, not on real disks.** Every operation is run for real against images and compared with what the map predicted (`python3 -m unittest discover -s tests`), but the final step on actual block devices has not been exercised. Try it on a spare drive first, and keep backups.
 - MBR extended and logical partitions are shown but cannot be changed.
 - FAT32, exFAT, Btrfs and XFS cannot be resized, because Ubuntu does not ship an offline tool for them.
-- If other partitions on a disk are mounted, the kernel keeps the old table until a reboot. Slice tells you when that happens.
+- If other partitions on a disk are mounted, the kernel keeps the old table until a reboot. Paddock tells you when that happens.
 - Moving a partition is not safe against power loss halfway through.
 
 ## Development

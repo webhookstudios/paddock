@@ -32,7 +32,7 @@ def _need_unmounted(p):
 
 def _need_editable(p):
     if not p.editable:
-        raise OpError('Slice cannot change extended or logical MBR partitions yet.')
+        raise OpError('Paddock cannot change extended or logical MBR partitions yet.')
 
 
 def _mounted_anywhere(d):
@@ -140,7 +140,7 @@ def simulate(disks, o):
         d, p = _part(disks, o)
         _need_editable(p)
         if not fsinfo.can_label(p.fs) and p.new is False:
-            raise OpError('Slice cannot set a label on this kind of filesystem.')
+            raise OpError('Paddock cannot set a label on this kind of filesystem.')
         check_label(p.fs, o['label'])
         p.label, p.changed = o['label'], True
     elif k == 'flags':
@@ -159,7 +159,7 @@ def simulate(disks, o):
         _need_editable(p)
         _need_unmounted(p)
         if not fsinfo.can_check(p.fs):
-            raise OpError('Slice has no checking tool for this filesystem.')
+            raise OpError('Paddock has no checking tool for this filesystem.')
     elif k == 'copy':
         _copy(disks, o)
     elif k == 'wipe':

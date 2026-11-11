@@ -20,6 +20,11 @@ class SliceApp(Adw.Application):
             self.win = SliceWindow(self)
         return self.win
 
+    def do_startup(self):
+        Adw.Application.do_startup(self)
+        from . import sedge
+        sedge.apply()
+
     def do_activate(self):
         self._window().present()
 

@@ -81,8 +81,8 @@ def resize_reason(fs):
     if fs in ('vfat', 'exfat'):
         return f'Resizing {info["title"] if info else fs} needs a tool Ubuntu does not ship (fatresize or an exFAT resizer).'
     if fs in ('btrfs', 'xfs'):
-        return f'{info["title"]} can only be resized while mounted, which Slice does not do.'
-    return f'Slice cannot resize {fs} filesystems.'
+        return f'{info["title"]} can only be resized while mounted, which Paddock does not do.'
+    return f'Paddock cannot resize {fs} filesystems.'
 
 
 def can_check(fs):
